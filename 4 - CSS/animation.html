@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+    <style>
+      #fruit {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        animation-name: ripe-fruit;
+        animation-duration: 10s;
+        animation-delay: 2s;
+        animation-iteration-count: 1s;
+        position: relative;
+      }
+
+      @keyframes ripe-fruit {
+        from {
+          background-color: green;
+        }
+        to {
+          background-color: red;
+        }
+      }
+
+      @keyframes ripe-fruit {
+        0% {
+          background-color: green;
+        }
+        25% {
+          background-color: greenyellow;
+        }
+        50% {
+          background-color: orange;
+        }
+        75% {
+          background-color: orangered;
+        }
+        100% {
+          background-color: red;
+        }
+      }
+      @keyframes ripe-fruit {
+        0% {
+          background-color: green;
+          left: 0px;
+          top: 0px;
+        }
+        25% {
+          background-color: greenyellow;
+          left: 200px;
+          top: 0px;
+        }
+        50% {
+          background-color: orange;
+          left: 200px;
+          top: 200px;
+        }
+        75% {
+          background-color: orangered;
+          left: 0px;
+          top: 200px;
+        }
+        100% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+      }
+
+      #fill-mode {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        animation-name: another-box;
+        animation-duration: 5s;
+        animation-fill-mode: forwards;
+        animation-fill-mode: backwards;
+        position: relative;
+
+        animation-direction: forward;
+        animation-direction: reverse; /* backwards */
+        animation-direction: alternate; /* forward and backwards */
+        animation-direction: alternate-reverse; /* backwards then forwards */
+      }
+
+      @keyframes another-box {
+        from {
+          background-color: orange;
+          top: 0px;
+        }
+        to {
+          background-color: tomato;
+          top: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="fruit">Welcome to my website.</div>
+    <div id="fill-mode">Animation Fill Mode</div>
+  </body>
+</html>
