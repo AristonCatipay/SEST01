@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <style>
+        div{
+            width: 300px;
+            height: 100px;
+            background-color: red;
+            border: 1px solid black;
+            transform: scale(2, 3); 
+            /* 2 times widder and 3 times taller */
+            transform: scale(0.5, 0.5);
+            /* 50% of the original width and height */
+            transform: scaleX(0.5);
+            transform: scaleY(0.5);
+            transform: scaleZ(0.5);
+            transform: matrix(a, b, c, d, tx, ty);  
+            /* matrix(width, height) */
+            /* a, b, c, d: These parameters define the linear transformation part of the matrix. They control scaling, rotation, and skewing. */
+            /* tx, ty: These parameters define the translation part of the matrix. They control the horizontal and vertical movement of the element. */
+        }   
+
+        div#myDiv {
+            /* This will rotate in a clockwise manner. */
+            /* Negative will rotate it in counter-clockwise? */
+            transform: rotate(45deg);
+        }
+
+        div#myDiv2 {
+            transform: skewY(20deg);
+        }
+
+        div#myDiv3 {
+            transform: matrix(1, 0, 0.5, 1, 150, 0);
+        }
+
+        #hover-effect { 
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition: width 2s, height 6s;
+        }
+
+        #hover-effect:hover {
+            width: 300px;
+            height: 300px
+        }
+
+        .linear {
+            transition-timing-function: linear;
+        }
+
+        .ease {
+            transition-timing-function: ease;
+        }
+
+        .ease-in {
+            transition-timing-function: ease-in;
+        }
+
+        .ease-in {
+            transition-timing-function: ease-out;
+        }
+
+        .ease-in-out {
+            transition-timing-function: ease-in-out;
+        }
+
+        .ease-out {
+            transition-timing-function: ease-out;
+        }
+        
+        .timing{
+            width: 100px;
+            transition: width 4s;
+        }
+
+        .timing:hover{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome to my Site</h2>
+    <div>Transform Example</div>
+    <div id="myDiv">Rotate Transform</div>
+    <div id="myDiv2">Another Matrix Example</div>
+    <div id="myDiv3">Another Matrix Example</div>
+    <div id="hover-effect">This box will be bigger once you hover on it.</div>
+    <div class="timing ease">Ease - slow start and will be faster.</div>
+    <div class="timing linear">Linear - same speed from start to end.</div>
+    <div class="timing ease-in">Ease-in - slow from the start then will go faster.</div>
+    <div class="timing ease-out">Ease-out - fast from the start then it will go slower.</div>
+    <div class="timing ease-in-out">Ease-in-out - </div>
+</body>
+</html>
+
