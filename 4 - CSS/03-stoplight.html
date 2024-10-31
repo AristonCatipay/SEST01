@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stop Light</title>
+    <style>
+        .bulb {
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            text-align: center;
+            border-radius: 50%;
+        }
+        
+        #stop {
+            background-color: darkred;
+        }
+
+        #slow {
+            background-color: darkkhaki;
+        }
+
+        #go {
+            background-color: darkgreen;
+        }
+
+        .container {
+            border-radius: 20px;
+            background-color: gray;
+            border: 2px solid black;
+            display: inline-block;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bulb" id="stop" onClick="">Stop</div>
+        <div class="bulb" id="slow" onClick="">Slow</div>
+        <div class="bulb" id="go" onClick="">Go</div>
+    </div>
+</body>
+
+</html>
+<script>
+   const stop = document.getElementById("stop");
+   const slow = document.getElementById("slow");
+   const go = document.getElementById("go");
+
+   stop.addEventListener("click", function(){
+    stop.style.backgroundColor = "red";
+    slow.style.backgroundColor = "darkkhaki";
+    go.style.backgroundColor = "darkgreen";
+   });
+   slow.addEventListener("click", function(){
+    slow.style.backgroundColor = "yellow";
+    stop.style.backgroundColor = "darkred";
+    go.style.backgroundColor = "darkgreen";
+   });
+   go.addEventListener("click", function(){
+    go.style.backgroundColor = "green";
+    stop.style.backgroundColor = "darkred";
+    slow.style.backgroundColor = "darkkhaki";
+   });
+</script>
